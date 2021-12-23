@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "86811b4e-e320-4ab9-b185-586f403f3add",
+		"name": "DroneProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "saveDrone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"drone\": [\n        {\n            \"model\": \"Lightweight\",\n            \"weight\": 250.50,\n            \"batteryCapacity\": 11.35,\n            \"state\": \"IDLE\"\n        },\n        {\n            \"model\": \"Middleweight\",\n            \"weight\": 234.50,\n            \"batteryCapacity\": 15.35,\n            \"state\": \"IDLE\"\n        },\n        {\n            \"model\": \"Cruiserweight\",\n            \"weight\": 112.50,\n            \"batteryCapacity\": 13.35,\n            \"state\": \"IDLE\"\n        },\n         {\n            \"model\": \"Heavyweight\",\n            \"weight\": 250.50,\n            \"batteryCapacity\": 45.35,\n            \"state\": \"IDLE\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/drone/registerDrone",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"drone",
+						"registerDrone"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "saveDrone",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"drone\": [\n        {\n            \"model\": \"Lightweight\",\n            \"weight\": 250.50,\n            \"batteryCapacity\": 11.35,\n            \"state\": \"IDLE\"\n        },\n        {\n            \"model\": \"Middleweight\",\n            \"weight\": 234.50,\n            \"batteryCapacity\": 15.35,\n            \"state\": \"IDLE\"\n        },\n        {\n            \"model\": \"Cruiserweight\",\n            \"weight\": 112.50,\n            \"batteryCapacity\": 13.35,\n            \"state\": \"IDLE\"\n        },\n         {\n            \"model\": \"Heavyweight\",\n            \"weight\": 250.50,\n            \"batteryCapacity\": 45.35,\n            \"state\": \"IDLE\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/drone/registerDrone",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"drone",
+								"registerDrone"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 Dec 2021 06:00:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": \"000\",\n    \"responseMessage\": \"SUCCESS\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "checkLoadedMedicationByDroneId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": [
+				{
+					"name": "checkLoadedMedicationByDroneId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/drone/checkLoadedMedicationByDroneId/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"drone",
+								"checkLoadedMedicationByDroneId",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 13 Dec 2021 15:25:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": \"000\",\n    \"responseMessage\": \"SUCCESS\",\n    \"data\": {\n        \"serialNumber\": 4,\n        \"model\": \"Cruiserweight\",\n        \"weight\": 112.5,\n        \"batteryCapacity\": 13.35,\n        \"state\": \"IDLE\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "loadDroneWithMedication",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJU1ciLCJleHAiOjE2Mzg4MDA4MzAsImlhdCI6MTYzODc4MjgzMH0.uCQo8bp1-U-QgwQW_vjqh1Ae1Rhf7ar18R3TKu_7KUsQNn7Mj52zEcz68sruhoL_mzPjDCJzjIVD31JYWPgN_A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/bolajiadesina/Documents/Bolaji/SW/test/Medication.jpg"
+						},
+						{
+							"key": "droneId",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "INSULIN",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "20.4",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "INSMED",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/drone/loadDroneWithMedication",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"drone",
+						"loadDroneWithMedication"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "loadDroneWithMedication",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/bolajiadesina/Documents/Bolaji/SW/test/Medication.jpg"
+								},
+								{
+									"key": "droneId",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "INSULIN",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "20.4",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "INSMED",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/drone/loadDroneWithMedication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"drone",
+								"loadDroneWithMedication"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 13 Dec 2021 15:27:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": \"000\",\n    \"responseMessage\": \"SUCCESS\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "checkDroneBatteryByDroneId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAvailableDrones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": [
+				{
+					"name": "getAllAvailableDrones",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/drone/getAllAvailableDrones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"drone",
+								"getAllAvailableDrones"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 Dec 2021 06:00:54 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseCode\": null,\n    \"responseMessage\": null,\n    \"data\": [\n        {\n            \"serialNumber\": 1,\n            \"model\": \"Lightweight\",\n            \"weight\": 250.5,\n            \"batteryCapacity\": 11.35,\n            \"state\": \"IDLE\"\n        },\n        {\n            \"serialNumber\": 2,\n            \"model\": \"Middleweight\",\n            \"weight\": 234.5,\n            \"batteryCapacity\": 15.35,\n            \"state\": \"IDLE\"\n        },\n        {\n            \"serialNumber\": 3,\n            \"model\": \"Cruiserweight\",\n            \"weight\": 112.5,\n            \"batteryCapacity\": 13.35,\n            \"state\": \"IDLE\"\n        },\n        {\n            \"serialNumber\": 4,\n            \"model\": \"Heavyweight\",\n            \"weight\": 250.5,\n            \"batteryCapacity\": 45.35,\n            \"state\": \"IDLE\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}

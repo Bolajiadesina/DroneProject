@@ -1,0 +1,4 @@
+FROM openjdk:8-jdk
+ADD target/docker-droneProject.jar droneProject.jar
+EXPOSE 9090
+ENTRYPOINT ["java","-jar","/droneProject.jar"]
